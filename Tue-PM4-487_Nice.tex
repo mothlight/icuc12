@@ -80,7 +80,7 @@
 %\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 
 
-
+\usepackage{setspace}
 
 \usepackage{siunitx}
 \usetheme{Madrid}
@@ -140,7 +140,7 @@
 {Kerry A. Nice$^{1}$, Harro J. Jongen$^{2}$, Kristian Förster$^{3}$
 }
 \institute[UoM]{{\begin{flushleft}
-\tiny $^{1}$ Transport, Health, and Urban Systems Research Lab, Faculty of Architecture, Building and Planning, University of Melbourne.\\$^{2}$ Institute for Water and Environment, Karlsruhe Institute of Technology, Karlsruhe, Germany.\\$^{3}$ Institute of Ecology and Landscape, Department of Landscape Architecture, Hochschule Weihenstephan-Triesdorf, Freising, Germany.
+\tiny $^{1}$Transport, Health, and Urban Systems Research Lab, Faculty of Architecture, Building and Planning, University of Melbourne.\\$^{2}$Institute for Water and Environment, Karlsruhe Institute of Technology, Karlsruhe, Germany.\\$^{3}$Institute of Ecology and Landscape, Department of Landscape Architecture, Hochschule Weihenstephan-Triesdorf, Freising, Germany.
 \end{flushleft}}}
 \titlegraphic{\includegraphics[scale=0.75]{template_icuc12_logo.png}~~~~\includegraphics[scale=0.5]{image001.jpg}~~~\includegraphics[scale=0.10]{karlsruhe-institute-of-technology-kit-logo-png_seeklogo-353008_.png}~~~\includegraphics[scale=0.12]{Hochschule_Weihenstephan-Triesdorf_Logo.svg.png}}
 \makebeamertitle
@@ -158,7 +158,7 @@
 \begin{center}
 \includegraphics[scale=0.60]{Screenshot_20250703_100546.png}
 \end{center}
-$^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.10972538}
+$^{1}${\footnotesize \cite{Cheung2024} (paper), 10.5281/zenodo.10140668, 10.5281/zenodo.10972538 (datasets)}
 \end{frame}
 
 
@@ -177,6 +177,7 @@ $^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.
 \item Leading to less accurate modelling
 \end{itemize}
 \item Urban Plumber and previous intercomparisions: Latent energy fluxes in urban areas poorly predicted by most models {\footnotesize \citep{lipson_evaluation_2024,grimmond_initial_2011}}
+\item This is also true of my models, TARGET and VTUF-3D
 \end{itemize}
 \end{frame}
 
@@ -199,7 +200,7 @@ $^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.
 \item Original Excel spreadsheet developed by Georg Hörmann
 \item Extended (snow, surface runoff) by Kristian Förster 2022
 \item Adapted by Kerry Nice 2023-5
-\item Supports hourly timesteps, irrigation, site specific parameters
+\item Added support for hourly timesteps, irrigation, additional site specific parameters
 \end{itemize}
 \includegraphics[scale=0.33]{Screenshot_20250703_140316.png}
 \end{column}
@@ -225,9 +226,9 @@ $^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.
 \includegraphics[scale=0.18]{BurnleyComparisons.png}
 \end{center}
 
-Initial testing of SIMPEL model with Burnley observations were promising. Reproducing soil moisture of different irrigation amounts (0, 2, 4mm/day).
+Initial testing of SIMPEL model with Burnley observations$^{1}$ were promising. Reproducing soil moisture of different irrigation amounts (0, 2, 4mm/day).
 \\
-$^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.10972538}
+$^{1}${\tiny \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.10972538}
 \end{frame}
 
 
@@ -286,376 +287,33 @@ The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGE
 
 \begin{itemize}
 
-\item Integration into TARGET as a single surface type (irrigated grass) is nearly complete
+\item Integration into TARGET as a single surface type (irrigated grass) is nearly complete:
 
-\item Integration into VTUF-3D as gridded individual patches of pervious/vegetated surfaces and underlying soil is in progress
+\item Integration into VTUF-3D as gridded individual patches of pervious/vegetated surfaces and underlying soil is in progress: 
 
 \item Improvement of ET using stomatal models to incorporate additional vegetation types
 
 \item Tuning and testing the model across a range of climate zones and city types
 
-\item SIMPEL model could also be integrated into other urban models, providing micro-scaled hydrology for a variety of vegetated and pervious surface types
+\item SIMPEL model could also be integrated into other urban models, providing micro-scaled hydrology for a variety of vegetated and pervious surface types:
 
 \item Or more accurate runoff for impervious surfaces
 
-% target -> UMEP (workshop Thursday)
-%https://github.com/mothlight/Simpel
-%https://github.com/mothlight/Target-Java.v2
-%https://github.com/mothlight/VTUF-3D-Java.v2/
-%https://umep-docs.readthedocs.io/en/latest/processor/Urban%20Heat%20Island%20TARGET.html
+\item Integration with UMEP plugin version of TARGET (come to the UMEP workshop on Thursday afternoon)
 
 \end{itemize}
 
+\begin{itemize}
+\setlength\itemsep{-0.55em}
+\item[] {\tiny https://github.com/mothlight/Target-Java.v2}
+\item[] {\tiny https://github.com/mothlight/VTUF-3D-Java.v2/} 
+\item[] {\tiny https://github.com/mothlight/Simpel} 
+\item[] {\tiny https://umep-docs.readthedocs.io/en/latest/processor/Urban\%20Heat\%20Island\%20TARGET.html}
+\end{itemize}
 
 \end{frame}
 
 
-
-%\begin{frame}{Overall workflow} 
-%\begin{center}
-%
-%\begin{figure}[ht]
-%\centering
-%%\includegraphics[page=1,trim={10 60 20 35},clip,scale=0.50]{figures/GraphicalAbstract4.pdf}
-% \label{fig:process}
-%\end{figure} 
-%\end{center}
-%
-%\scalebox{0.30}{Kerry A. Nice, Negin Nazarian, Mathew J. Lipson, Melissa A. Hart, Sachith Seneviratne, Jason Thompson, Marzie Naserikia, Branislava Godic, and Mark Stevenson, Isolating the impacts of urban form and fabric from geography on urban heat and human thermal comfort, Building and Environment, 2022. }
-%\end{frame}
-
-
-%\begin{frame}{VTUF-3D micro-climate model} 
-%\begin{center}
-%
-%\includegraphics[page=6,trim={50 20 50 130},clip,scale=0.30]{/home/kerryn/git/2018-02-SingaporeCooling/KerrySingaporeCooling.pdf}
-%\\
-%\includegraphics[page=7,trim={50 40 100 60},clip,scale=0.35]{/home/kerryn/git/2018-02-SingaporeCooling/KerrySingaporeCooling.pdf}
-%\\ \scalebox{0.30}{ K.A. Nice, A. Coutts, and N.J. Tapper, Development of the VTUF-3D v1.0 urban micro-climate model to support assessment of urban vegetation influences on human thermal comfort. Urban Climate, 2018. }
-%\end{center}
-%\end{frame}
-
-
-
-%
-%
-%\begin{frame}{VTUF-3D micro-climate model} 
-%\begin{center}
-%%\fbox{
-%\includegraphics[page=8,trim={50 50 100 130},clip,scale=0.55]{/home/kerryn/git/2018-02-SingaporeCooling/KerrySingaporeCooling.pdf}
-%%}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%
-%
-%
-%\begin{frame}{Creation of VTUF-3D scenarios for 9814 variations of parameters across representative ranges in Melbourne} 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\includegraphics[page=15,trim={70 245 80 240},clip,scale=0.40]{Figures/Figures6.pdf}
-%\tiny \\
-%Example scenarios from the 9814 modelled 
-%\begin{itemize}
-%\item 49\% grass, 50\% trees, 0.5\% roads, 0.5\% building, mean building height 5.0m, mean vegetation height 15.0m 
-%\item 9\% grass, 0\% trees, 31\% roads, 60\% building, mean building height 49.8m, mean vegetation height 0m
-%\item 9\% grass, 10\% trees, 71\% roads, 10\% building, mean building height 14.8m , mean vegetation height 0.5m. 
-%\item Modelled 3-dimensional results of UTCI for scenario (c) at 2pm February 12, 2004.
-%\end{itemize}
-%
-%
-%\end{figure} 
-%\end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Forcing data for comparison day} 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\includegraphics[page=20,trim={56 288 60 280},clip,scale=0.65]{Figures/Figures6.pdf}
-% \label{fig:scenarios}
-%\end{figure} 
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%\begin{frame}{Air temperature over surface and height ranges} 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\includegraphics[page=2,trim={90 238 90 238},clip,scale=0.55]{Figures/Figures6.pdf}
-%\\
-%{\tiny Mean $T_{can}$ outcomes clustered by 10\% surface fraction ranges of a) grass, b) streets, c) trees, and d) buildings and e) average vegetation and f) average building heights clustered by 0.8m increases over a diurnal cycle of February 12, 2004\par } 
-% \label{fig:tcanday}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%\begin{frame}{UTCI temperature over surface and height ranges} 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\includegraphics[page=3,trim={90 238 90 238},clip,scale=0.55]{Figures/Figures6.pdf}
-%\\
-%{\tiny  Mean UTCI outcomes clustered by 10\% surface fraction ranges of a) grass, b) streets, c) trees, and d) buildings and e) average vegetation and f) average building heights clustered by 0.8m increases over a diurnal cycle of February 12, 2004.\par } 
-% \label{fig:tcanday}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Temperature differences summary} 
-%\begin{center}
-%\begin{figure}
-%\centering
-%
-%\includegraphics[page=10,trim={120 640 120 130},clip,scale=0.8]{/home/unimelb.edu.au/knice/git/2020-07-Frontiers-UrbClimInformatics/Article/MCZArticleV2_Preprint_R1.pdf}
-%\\~\\
-%Maximum differences ($^{\circ}$C) in T$_{can}$ and UTCI when increasing fractions from 10\% to 90\% and average vegetation and building heights to 4.4m. Bold indicates temperatures increase as fractions or heights increase. 
-%\end{figure} 
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%\begin{frame}{} 
-%\begin{center}
-%\begin{figure}
-%\centering
-%%\includegraphics[page=1,trim={80 90 80 90},clip,scale=0.30]{Figures/Figures6.pdf}
-%%\includegraphics[page=1,trim={80 90 80 90},clip,scale=0.30]{Figures/Figures6.pdf}
-%%\includegraphics[trim={205 30 250 14},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/TCAN_uncluster_box3_reverse_80_final_R2.png} 
-%%\\
-%\includegraphics[trim={205 30 250 14},clip,scale=0.14]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/TCAN_uncluster_box3_reverse_89_final_R2.png}
-%\\
-%%\includegraphics[trim={205 30 250 14},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/UTCI_uncluster_box3_reverse_80_final_R2.png} 
-%%\\  
-%\includegraphics[trim={205 30 250 14},clip,scale=0.14]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/UTCI_uncluster_box3_reverse_89_final_R2.png}
-%\\
-%{\tiny Surface fractions percentages (trees, grass, buildings, and streets) and average heights (vegetation and building) vs. $T_{can}$ and UTCI for February 12, 2004, 2pm. Feature importance for each temperature type is indicated by the green background tinting. \par}
-% \label{fig:box14a}
-%\end{figure} 
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%
-%
-%
-%%\begin{frame}{Feature importance} 
-%%\begin{center}
-%%\begin{figure}
-%%\centering
-%%{\tiny a)}\includegraphics[page=16,trim={55 275 50 295},clip,scale=0.38]{Figures/Figures6.pdf}
-%%\\
-%%{\tiny b)}\includegraphics[page=17,trim={55 275 50 295},clip,scale=0.38]{Figures/Figures6.pdf}
-%%\\
-%%{\tiny Feature importance in a) $T_{can}$ and b) UTCI for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 12 February 2004.\par }
-%%\label{fig:featimpttcan}
-%%\label{fig:featimpttmrt}
-%%\label{fig:featimpttsfc}
-%%\label{fig:featimptutci}
-%%\end{figure}
-%%\end{center}
-%%\end{frame}
-%
-%
-%
-%\begin{frame}{Distributions of UTCI in individual scenarios} 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\fbox{
-%{\tiny a)}\includegraphics[page=4,trim={60 225 40 251},clip,scale=0.22]{Figures/Figures6.pdf}
-%}
-%\fbox{
-%{\tiny b)}\includegraphics[page=6,trim={150 225 40 251},clip,scale=0.22]{Figures/Figures6.pdf}
-%}
-%\\
-%\fbox{
-%{\tiny c)}\includegraphics[page=9,trim={60 225 40 251},clip,scale=0.22]{Figures/Figures6.pdf}
-%}
-%\fbox{
-%{\tiny d)}\includegraphics[page=10,trim={150 225 40 251},clip,scale=0.22]{Figures/Figures6.pdf}
-%}
-%\\
-%{\tiny  Distribution of UTCI across February 12, 2004 for scenarios a) 50\% grass, 49.99\% trees, 0.01\% road, 0\% building, average vegetation height of 4m, and average building height of 0m, b) 29\% grass, 69\% trees, 1\% road, 1\% building, average vegetation height of 0.5m, and average building height of 5m, c) 40\% grass, 10\% trees, 20\% road, 30\% building, average vegetation height of 2m, and average building height of 14m, and d) 19\% grass, 20\% trees, 21\% road, 40\% building, average vegetation height of 1m, and average building height of 9m. Red line indicates hourly median temperature. Insert shows percent fractions of surface types.\par}
-% \label{fig:dist1}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%\begin{frame}{Surface fractions in Melbourne } 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\includegraphics[page=19,trim={55 215 200 215},clip,scale=0.52]{Figures/Figures6.pdf}\\
-%{\tiny    Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Melbourne.\par}
-% \label{fig:melfracs}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Constructing city heatmaps of Melbourne  } 
-%\begin{center}
-%\begin{figure}
-%\centering
-%{\tiny a)}\includegraphics[page=18,trim={63 421.25 370 215},clip,scale=0.96]{Figures/Figures6.pdf}
-%{\tiny b)}\includegraphics[page=18,trim={234 220 195 420},clip,scale=0.96]{Figures/Figures6.pdf}
-%\\
-%{\tiny a) $T_{can}$ and b) UTCI heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results (in \SI{}{\degreeCelsius}).\par } 
-% \label{fig:TaMelb}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%\begin{frame}{Landsat LST vs $T_{sfc}$ of Melbourne } 
-%\begin{center}
-%\begin{figure}
-%\centering
-%{\tiny a)}\includegraphics[page=13,trim={75 225 195 245},clip,scale=0.50]{Figures/Figures6.pdf}
-%{\tiny b)}\includegraphics[page=11,trim={63 230 220 250},clip,scale=0.51]{Figures/Figures6.pdf}
-%\\
-%{\tiny a) Landsat 8 land surface temperature (\SI{}{\degreeCelsius}) captured 10am December 11, 2018. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. b) Modelled $T_{sfc}$ (\SI{}{\degreeCelsius}) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.\par} 
-% \label{fig:Melb_TSFC12_85}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%
-%
-%\begin{frame}{Surface fractions in Sydney } 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\includegraphics[page=1,trim={55 215 200 215},clip,scale=0.52]{Figures/Figures7.pdf}
-%\\
-%{\tiny   Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Sydney.\par}
-% \label{fig:melfracs}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Constructing city heatmaps of Sydney } 
-%\begin{center}
-%\begin{figure}
-%\centering
-%{\tiny a)}\includegraphics[page=2,trim={63 421.25 370 215},clip,scale=0.96]{Figures/Figures7.pdf}
-%{\tiny b)}\includegraphics[page=2,trim={234 220 195 420},clip,scale=0.96]{Figures/Figures7.pdf}
-%\\
-%{\tiny a) $T_{can}$ and b) UTCI heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results (in \SI{}{\degreeCelsius}).\par } 
-% \label{fig:TaSyd}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Landsat LST vs $T_{sfc}$ of Sydney } 
-%\begin{center}
-%\begin{figure}
-%\centering
-%{\tiny a)}\includegraphics[page=14,trim={65 245 245 240},clip,scale=0.49]{Figures/Figures6.pdf}
-%{\tiny b)}\includegraphics[page=12,trim={60 220 210 225},clip,scale=0.50]{Figures/Figures6.pdf}
-%\\
-%{\tiny  a) Landsat 8 land surface temperature (\SI{}{\degreeCelsius}) captured 10am March 11, 2019. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. b) Modelled $T_{sfc}$ (\SI{}{\degreeCelsius}) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.\par} 
-% \label{fig:Syd_TSFC12_85}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%\begin{frame}{Conclusions}   
-%\begin{itemize}
-%\item Street fractions the most important feature driving heat during the daytime (all the following are street level)
-%\item Heights (shading) provide some moderate Tcan cooling and larger UTCI cooling
-%\item Trees provide some Tcan cooling and larger UTCI cooling
-%\item Similar trends at nighttime, but much smaller magnitude
-%\item Method allows city-wide heat maps based on only the composition and arrangement of urban form
-%\item LST commonly used to heat assessments but this can be complicated and misleading
-%
-%\item Next steps: analysis of LCZ ranges
-%\end{itemize}
-%
-%
-%\end{frame}
-%
-%
-%
-%\begin{frame}{LCZs (very early results) } 
-%\begin{center}
-%\begin{figure}
-%\centering
-%\includegraphics[trim={0 0 0 0},clip,scale=0.18]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/LCZs/UTCI_uncluster_box2_reverse_LCZ_89.png}
-%\\
-%{\tiny   Temperatures vs. LCZ classes\par}
-% \label{fig:melfracs}
-%\end{figure}
-%\end{center}
-%\end{frame}
-%
-%
-%
-%
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %\begin{frame}<presentation:0>[noframenumbering]
