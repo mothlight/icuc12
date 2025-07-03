@@ -137,9 +137,11 @@
 
 \title[The SIMPEL soil water balance module]{Improving urban water process representations in land surface models with the SIMPEL soil water balance module}
 \author[Nice, KA et al.]
-{Kerry A. Nice, Harro J. Jongen, Kristian Förster
+{Kerry A. Nice$^{1}$, Harro J. Jongen$^{2}$, Kristian Förster$^{3}$
 }
-\institute[UoM]{Transport, Health, and Urban Systems Research Lab, Faculty of Architecture, Building and Planning, University of Melbourne, Melbourne, Australia.\\Institute for Water and Environment, Karlsruhe Institute of Technology, Karlsruhe, Germany.\\Institute of Ecology and Landscape, Department of Landscape Architecture, Hochschule Weihenstephan-Triesdorf, Freising, Germany.}
+\institute[UoM]{{\begin{flushleft}
+\tiny $^{1}$ Transport, Health, and Urban Systems Research Lab, Faculty of Architecture, Building and Planning, University of Melbourne.\\$^{2}$ Institute for Water and Environment, Karlsruhe Institute of Technology, Karlsruhe, Germany.\\$^{3}$ Institute of Ecology and Landscape, Department of Landscape Architecture, Hochschule Weihenstephan-Triesdorf, Freising, Germany.
+\end{flushleft}}}
 \titlegraphic{\includegraphics[scale=0.75]{template_icuc12_logo.png}~~~~\includegraphics[scale=0.5]{image001.jpg}~~~\includegraphics[scale=0.10]{karlsruhe-institute-of-technology-kit-logo-png_seeklogo-353008_.png}~~~\includegraphics[scale=0.12]{Hochschule_Weihenstephan-Triesdorf_Logo.svg.png}}
 \makebeamertitle
 
@@ -174,7 +176,7 @@ $^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.
 \item Or fully account for all types of indicators (runoff, infiltration, ET, storage)
 \item Leading to less accurate modelling
 \end{itemize}
-\item Urban Plumber and previous intercomparisions: Latent energy fluxes poorly predicted by most models {\footnotesize \citep{lipson_evaluation_2024,grimmond_initial_2011}}
+\item Urban Plumber and previous intercomparisions: Latent energy fluxes in urban areas poorly predicted by most models {\footnotesize \citep{lipson_evaluation_2024,grimmond_initial_2011}}
 \end{itemize}
 \end{frame}
 
@@ -188,9 +190,27 @@ $^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.
 
 \begin{frame}{The SIMPEL model} 
 
-\includegraphics[scale=0.30]{Simpel_diagram2.png}
 
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Single bucket model
+\item original Excel spreadsheet developed by Georg Hörmann
+\item extended (snow, surface runoff) by Kristian Förster 2022
+\item Adapted by Kerry Nice 2023-5
+\item Support hourly timesteps, irrigation
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+ \includegraphics[scale=0.30]{Simpel_diagram2.png}\\
 Adapted from \cite{hormann_comparison_2007}
+\end{column}
+
+\end{columns}
+
+
 
 
 \end{frame}
@@ -198,35 +218,56 @@ Adapted from \cite{hormann_comparison_2007}
 
 
 \begin{frame}{Validations against Burnley irrigation observations} 
-\includegraphics[scale=0.20]{BurnleyComparisons.png}
+\begin{center}
+\includegraphics[scale=0.18]{BurnleyComparisons.png}
+\end{center}
+
+Initial testing of SIMPEL model with Burnley observations were promising. Reproducing soil moisture of different irrigation amounts (0, 2, 4mm/day).
+\\
+$^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.10972538}
 \end{frame}
 
 
 
-\begin{frame}{The SIMPEL latent energy comparisons with Urban Plumber sites} 
+\begin{frame}{The SIMPEL evaporotranspiration comparisons with Urban Plumber sites} 
+
+{\footnotesize And broad agreement across many Urban Plumber sites of evaporotranspiration levels}
+\begin{center}
 \includegraphics[scale=0.24]{et_presunangle.pdf}
+\end{center}
 \end{frame}
 
 
-\begin{frame}{The SIMPEL latent energy comparisons with Urban Plumber sites} 
+
+\begin{frame}{The SIMPEL water balance comparisons with Urban Plumber sites} 
+And includes necessary components for water balance closure
+\begin{center}
 \includegraphics[scale=0.50]{water_balance_presunangle.pdf}
+\end{center}
 \end{frame}
-
-
 
 
 
 \begin{frame}{Integration into TARGET} 
-What TARGET did.
-\\
-\includegraphics[scale=0.30]{TARGET1.png}~
-\includegraphics[scale=0.30]{TARGET2.png}
-\\
-\includegraphics[scale=0.30]{TARGET3.png}
-\\
-What has changed.
 
-\citep{Broadbent2019}
+\begin{center}
+\includegraphics[scale=0.60,trim={20 80 20 10},clip]{TARGET1.png}
+\includegraphics[scale=0.60,trim={20 180 20 0},clip]{TARGET2.png}
+\end{center}
+The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGET) is a computationally efficient model designed to evaluate blue/green infrastructure, based on an urban canyon and aggregations of different land cover types \citep{Broadbent2019}.
+\end{frame}
+
+
+\begin{frame}{Integration into TARGET} 
+
+\includegraphics[scale=0.45]{TARGET3.png}
+
+\begin{itemize}
+\item Hydrology is not included
+\item Latent energy indirectly calculated from ground flux heat storage calculations for different surface types using the $\alpha$ coefficient of the OHM model
+\item SIMPLE allows replacement with hydrologically based evaporotranspiration and latent energy calculations.
+\item Provides additional capability to account for irrigation, drought and other hydrological impacts
+\end{itemize}
 
 \end{frame}
 
@@ -249,6 +290,12 @@ What has changed.
 \item SIMPEL model could also be integrated into other urban models, providing a micro-scaled hydrology for a variety of vegetated and pervious surface types
 
 \item Or more accurate runoff for impervious surfaces
+
+% target -> UMEP (workshop Thursday)
+%https://github.com/mothlight/Simpel
+%https://github.com/mothlight/Target-Java.v2
+%https://github.com/mothlight/VTUF-3D-Java.v2/
+%https://umep-docs.readthedocs.io/en/latest/processor/Urban%20Heat%20Island%20TARGET.html
 
 \end{itemize}
 
