@@ -196,16 +196,17 @@ $^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.
 \begin{column}{0.5\textwidth}
 \begin{itemize}
 \item Single bucket model
-\item original Excel spreadsheet developed by Georg Hörmann
-\item extended (snow, surface runoff) by Kristian Förster 2022
+\item Original Excel spreadsheet developed by Georg Hörmann
+\item Extended (snow, surface runoff) by Kristian Förster 2022
 \item Adapted by Kerry Nice 2023-5
-\item Support hourly timesteps, irrigation
+\item Supports hourly timesteps, irrigation, site specific parameters
 \end{itemize}
+\includegraphics[scale=0.33]{Screenshot_20250703_140316.png}
 \end{column}
 
 \begin{column}{0.5\textwidth}
  \includegraphics[scale=0.30]{Simpel_diagram2.png}\\
-Adapted from \cite{hormann_comparison_2007}
+{\scriptsize Adapted from \cite{hormann_comparison_2007}}
 \end{column}
 
 \end{columns}
@@ -214,6 +215,8 @@ Adapted from \cite{hormann_comparison_2007}
 
 
 \end{frame}
+
+
 
 
 
@@ -263,16 +266,18 @@ The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGE
 \includegraphics[scale=0.45]{TARGET3.png}
 
 \begin{itemize}
-\item Hydrology is not included
-\item Latent energy indirectly calculated from ground flux heat storage calculations for different surface types using the $\alpha$ coefficient of the OHM model
-\item SIMPLE allows replacement with hydrologically based evaporotranspiration and latent energy calculations.
+\item Hydrology was not previously included
+\item Latent energy was indirectly calculated from ground flux heat storage calculations for different surface types using the $\alpha$ coefficient of the OHM model
+\item SIMPEL allows replacement with hydrologically based evaporotranspiration and latent energy calculations requiring very minor additional computational costs.
 \item Provides additional capability to account for irrigation, drought and other hydrological impacts
 \end{itemize}
-
 \end{frame}
 
 
-\begin{frame}{Validations against Urban Plumber Preston observations using TARGET} 
+\begin{frame}{TARGET evaluation against Preston observations} 
+
+{\footnotesize At this early stage of development, TARGET provides reasonable agreement with observed latent energy (top panel) of Urban Plumber Preston site \citep{Coutts2007}.}
+\\
 \includegraphics[scale=0.20]{PrestonFeb2004_4mmIrr_ground.png}
 \end{frame}
 
@@ -283,11 +288,13 @@ The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGE
 
 \item Integration into TARGET as a single surface type (irrigated grass) is nearly complete
 
-\item Integration into VTUF-3D as gridded individual buckets for pervious and vegetated surfaces is planned
+\item Integration into VTUF-3D as gridded individual patches of pervious/vegetated surfaces and underlying soil is in progress
 
 \item Improvement of ET using stomatal models to incorporate additional vegetation types
 
-\item SIMPEL model could also be integrated into other urban models, providing a micro-scaled hydrology for a variety of vegetated and pervious surface types
+\item Tuning and testing the model across a range of climate zones and city types
+
+\item SIMPEL model could also be integrated into other urban models, providing micro-scaled hydrology for a variety of vegetated and pervious surface types
 
 \item Or more accurate runoff for impervious surfaces
 
