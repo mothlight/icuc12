@@ -147,16 +147,42 @@
 %
 
 
-\begin{frame}{Project aims} 
+\begin{frame}{Motivation: Modelling irrigation} 
 
-
-\textbf{Objectives}
 \begin{itemize}
-\item 
+\item Irrigation trials at University of Melbourne (Burnley)$^{1}$. Looking for model capable of reproducing micro-scaled results.\\ 
+\item But most hydrology models are at a catchment scale.
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.60]{Screenshot_20250703_100546.png}
+\end{center}
+$^{1}${\footnotesize \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.10972538}
+\end{frame}
 
 
+
+
+
+
+\begin{frame}{Motivation: Urban Plumber} 
+\begin{itemize}
+
+\item Meanwhile, Urban Plumber results: most urban models do a terrible job with hydrology {\footnotesize \citep{jongen_water_2024}}.
+\begin{itemize}
+\item Most don't account for hydrology at all
+\item If they do, water budget rarely closed
+\item Or fully account for all types of indicators (runoff, infiltration, ET, storage)
+\item Leading to less accurate modelling
+\end{itemize}
+\item Urban Plumber and previous intercomparisions: Latent energy fluxes poorly predicted by most models {\footnotesize \citep{lipson_evaluation_2024,grimmond_initial_2011}}
 \end{itemize}
 \end{frame}
+
+
+
+
+
+
 
 
 
@@ -216,7 +242,9 @@ What has changed.
 
 \item Integration into TARGET as a single surface type (irrigated grass) is nearly complete
 
-\item Integration into VTUF-3D as individual buckets for individual pervious surfaces is planned
+\item Integration into VTUF-3D as gridded individual buckets for pervious and vegetated surfaces is planned
+
+\item Improvement of ET using stomatal models to incorporate additional vegetation types
 
 \item SIMPEL model could also be integrated into other urban models, providing a micro-scaled hydrology for a variety of vegetated and pervious surface types
 
