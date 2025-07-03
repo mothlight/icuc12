@@ -77,7 +77,7 @@
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 
 \usepackage{tikz}
 \usepackage{setspace}
@@ -175,7 +175,7 @@
 \begin{center}
 \includegraphics[scale=0.60]{Screenshot_20250703_100546.png}
 \end{center}
-$^{1}${\footnotesize \cite{Cheung2024} (paper), 10.5281/zenodo.10140668, 10.5281/zenodo.10972538 (datasets)}
+{\tiny $^{1}$\cite{Cheung2024} (paper), 10.5281/zenodo.10140668, 10.5281/zenodo.10972538 (datasets)}
 \end{frame}
 
 
@@ -189,12 +189,12 @@ $^{1}${\footnotesize \cite{Cheung2024} (paper), 10.5281/zenodo.10140668, 10.5281
 \item Meanwhile, Urban Plumber results: most urban models do a terrible job with hydrology {\footnotesize \citep{jongen_water_2024}}.
 \begin{itemize}
 \item Most don't account for hydrology at all
-\item If they do, water budget rarely closed
+\item If they do, water budgets are rarely closed
 \item Or fully account for all types of indicators (runoff, infiltration, ET, storage)
 \item Leading to less accurate modelling
 \end{itemize}
 \item Urban Plumber and previous intercomparisions: Latent energy fluxes in urban areas poorly predicted by most models {\footnotesize \citep{lipson_evaluation_2024,grimmond_initial_2011}}
-\item This is also true of my models, TARGET and VTUF-3D \citep{Nice2018}
+\item This is also true of my models, TARGET {\footnotesize \citep{Broadbent2019}} and VTUF-3D {\footnotesize \citep{Nice2018}}
 \end{itemize}
 \end{frame}
 
@@ -245,7 +245,7 @@ $^{1}${\footnotesize \cite{Cheung2024} (paper), 10.5281/zenodo.10140668, 10.5281
 
 Initial testing of SIMPEL model with Burnley observations$^{1}$ were promising. Reproducing soil moisture of different irrigation amounts (0, 2, 4mm/day).
 \\
-$^{1}${\tiny \cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.10972538}
+{\tiny $^{1}$\cite{Cheung2024}, 10.5281/zenodo.10140668, 10.5281/zenodo.10972538}
 \end{frame}
 
 
@@ -275,7 +275,7 @@ And includes necessary components for water balance closure
 \includegraphics[scale=0.60,trim={20 80 20 10},clip]{TARGET1.png}
 \includegraphics[scale=0.60,trim={20 180 20 0},clip]{TARGET2.png}
 \end{center}
-The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGET) is a computationally efficient model designed to evaluate blue/green infrastructure, based on an urban canyon and aggregations of different land cover types \citep{Broadbent2019}.
+The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGET) is a computationally efficient model designed to evaluate blue/green infrastructure, based on an urban canyon and aggregations of different land cover types {\footnotesize \citep{Broadbent2019}}.
 \end{frame}
 
 
@@ -286,7 +286,7 @@ The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGE
 \begin{itemize}
 \item Hydrology was not previously included
 \item Latent energy was indirectly calculated from ground flux heat storage calculations for different surface types using the $\alpha$ coefficient of the OHM model
-\item SIMPEL allows replacement with hydrologically based evaporotranspiration and latent energy calculations requiring very minor additional computational costs.
+\item SIMPEL allows replacement with hydrologically-based evaporotranspiration and latent energy calculations requiring very minor additional computational costs.
 \item Provides additional capability to account for irrigation, drought and other hydrological impacts
 \end{itemize}
 \end{frame}
@@ -294,7 +294,7 @@ The Air-temperature Response to Green/blue-infrastructure Evaluation Tool (TARGE
 
 \begin{frame}{TARGET evaluation against Preston observations} 
 
-{\footnotesize At this early stage of development, TARGET provides reasonable agreement with observed latent energy (top panel) of Urban Plumber Preston site \citep{Coutts2007}.}
+{\footnotesize At this early stage of development, TARGET provides reasonable agreement with observed latent energy (top panel) of Urban Plumber Preston site {\footnotesize \citep{Coutts2007}}.}
 \\
 \includegraphics[scale=0.20]{PrestonFeb2004_4mmIrr_ground.png}
 \end{frame}
