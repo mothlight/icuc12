@@ -44,7 +44,7 @@
 %\usetheme{Ilmenau}
 %\usetheme{JuanLesPins}
 %\usetheme{Luebeck}
-%\usetheme{Madrid}
+\usetheme{Madrid}
 %\usetheme{Malmoe}
 %\usetheme{Marburg}
 %\usetheme{Montpellier}
@@ -79,11 +79,11 @@
 
 %\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 
-
+\usepackage{tikz}
 \usepackage{setspace}
 
 \usepackage{siunitx}
-\usetheme{Madrid}
+%\usetheme{Madrid}
 \useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
 \useinnertheme{circles}
 \beamertemplatenavigationsymbolsempty
@@ -135,6 +135,22 @@
 \begin{document}
 
 
+%\title[The SIMPEL soil water balance module]{Improving urban water process representations in land surface models with the SIMPEL soil water balance module}
+%\author[Nice, KA et al.]
+%{Kerry A. Nice$^{1}$, Harro J. Jongen$^{2}$, Kristian Förster$^{3}$
+%}
+%\institute[UoM]{{\begin{flushleft}
+%\tiny $^{1}$Transport, Health, and Urban Systems Research Lab, Faculty of Architecture, Building and Planning, University of Melbourne.\\$^{2}$Institute for Water and Environment, Karlsruhe Institute of Technology, Karlsruhe, Germany.\\$^{3}$Institute of Ecology and Landscape, Department of Landscape Architecture, Hochschule Weihenstephan-Triesdorf, Freising, Germany.
+%\end{flushleft}}}
+%\titlegraphic{\includegraphics[scale=0.75]{template_icuc12_logo.png}~~~~\includegraphics[scale=0.5]{image001.jpg}~~~\includegraphics[scale=0.10]{karlsruhe-institute-of-technology-kit-logo-png_seeklogo-353008_.png}~~~\includegraphics[scale=0.12]{Hochschule_Weihenstephan-Triesdorf_Logo.svg.png}}
+%\makebeamertitle
+
+
+
+{
+\usebackgroundtemplate{%
+\tikz\node[opacity=0.2,inner sep=0] {\includegraphics[height=\paperheight,width=\paperwidth]{Screenshot_20250702_152356_scale.png}};}
+
 \title[The SIMPEL soil water balance module]{Improving urban water process representations in land surface models with the SIMPEL soil water balance module}
 \author[Nice, KA et al.]
 {Kerry A. Nice$^{1}$, Harro J. Jongen$^{2}$, Kristian Förster$^{3}$
@@ -144,9 +160,10 @@
 \end{flushleft}}}
 \titlegraphic{\includegraphics[scale=0.75]{template_icuc12_logo.png}~~~~\includegraphics[scale=0.5]{image001.jpg}~~~\includegraphics[scale=0.10]{karlsruhe-institute-of-technology-kit-logo-png_seeklogo-353008_.png}~~~\includegraphics[scale=0.12]{Hochschule_Weihenstephan-Triesdorf_Logo.svg.png}}
 \makebeamertitle
+}
 
 
-%
+
 
 
 \begin{frame}{Motivation: Modelling irrigation} 
@@ -177,7 +194,7 @@ $^{1}${\footnotesize \cite{Cheung2024} (paper), 10.5281/zenodo.10140668, 10.5281
 \item Leading to less accurate modelling
 \end{itemize}
 \item Urban Plumber and previous intercomparisions: Latent energy fluxes in urban areas poorly predicted by most models {\footnotesize \citep{lipson_evaluation_2024,grimmond_initial_2011}}
-\item This is also true of my models, TARGET and VTUF-3D {\tiny \citep{Nice2018}}
+\item This is also true of my models, TARGET and VTUF-3D \citep{Nice2018}
 \end{itemize}
 \end{frame}
 
